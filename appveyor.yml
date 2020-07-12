@@ -146,7 +146,7 @@ install:
   - ccache -M 900M
   - which g++
   - g++ --version
-  - curl --output tests_qrs.zip "https://dl.trikset.com/edu/.solutions20200701/test.zip"
+  - curl --output tests_qrs.zip "https://dl.trikset.com/edu/.solutions20200701/test_fields.zip"
   - unzip tests_qrs.zip
   - ls
   - dir C:\Qt\Tools\
