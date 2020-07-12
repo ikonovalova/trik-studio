@@ -12,7 +12,7 @@ if __name__=='__main__':
 	num_failed_tests = 0
 	for f in list(get_files(sys.argv[2])):
 		output = subprocess.run([bin_path, '-b', '-s', '5', f], capture_output=True)
-		print("Test %s. " % f + "Return code : %d. " % output.returncode + "Message: %s" % output.stderr)
+		print("Test %s. " % f + "Return code : %d. " % output.returncode + "Message: %s" % output.stderr.decode("cp1251"))
 		if (output.returncode != 0):
 			print("Solution failed with return code %d " % output.returncode)
 			num_failed_tests += 1
