@@ -533,8 +533,8 @@ void TwoDModelWidget::loadWorldModelWithoutRobot()
 	auto currentRobot = generateWorldModelXml().firstChildElement("root")
 			.firstChildElement("robots").firstChildElement("robot");
 
-	saveRobot.replaceChild(saveRobot.firstChildElement("sensors"), currentRobot.firstChildElement("sensors"));
-	saveRobot.replaceChild(saveRobot.firstChildElement("wheels"), currentRobot.firstChildElement("wheels"));
+	saveRobot.replaceChild(currentRobot.firstChildElement("sensors"), saveRobot.firstChildElement("sensors"));
+	saveRobot.replaceChild(currentRobot.firstChildElement("wheels"), saveRobot.firstChildElement("wheels"));
 	saveRobot.setAttribute("id", currentRobot.attribute("id"));
 
 	auto command = new commands::LoadWorldCommand(*this, save);
@@ -731,7 +731,6 @@ void TwoDModelWidget::setController(ControllerInterface &controller)
 		}
 	};
 
-	connect(mController, &ControllerInterface::executedOrUndoRedo, this, &TwoDModelWidget::saveWorldModelToRepo);
 	connect(mRobotItemPopup, &graphicsUtils::ItemPopup::propertyChanged, this, setItemsProperty);
 	connect(mColorFieldItemPopup, &graphicsUtils::ItemPopup::propertyChanged, this, setItemsProperty);
 	connect(mImageItemPopup, &graphicsUtils::ItemPopup::propertyChanged, this, setItemsProperty);

@@ -472,7 +472,7 @@
     <message>
         <location line="+44"/>
         <source>Robot track:</source>
-        <translation>Колейность робота:</translation>
+        <translation>Колея робота:</translation>
     </message>
 </context>
 <context>
@@ -1090,7 +1090,7 @@
         <translation type="vanished">Попытка загрузить слишком большое изображение может заморозить выполнение на некоторое время. Продолжить?</translation>
     </message>
     <message>
-        <location line="+338"/>
+        <location line="+337"/>
         <source>Hide details</source>
         <translation>Скрыть детали</translation>
     </message>
